@@ -1,0 +1,6 @@
+<div class="col-md-12">
+  <h5>Class Features</h5>
+  <div *ngFor="let classFeature of this.classFeatureKeys">
+    <p>{{classFeature}} - {{this.stats.classFeatures[classFeature]}}</p>
+  </div>
+</div>

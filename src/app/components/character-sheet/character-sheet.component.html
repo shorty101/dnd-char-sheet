@@ -4,9 +4,7 @@
     <div class="col-md-10">
       <div class="row">
         <app-character-attribute-details></app-character-attribute-details>
-        <div class="combat-options">
-
-        </div>
+        <app-character-attack-details></app-character-attack-details>
       </div>
       <div class="row">
         <app-character-speed-init-grapple-details></app-character-speed-init-grapple-details>
@@ -16,12 +14,26 @@
       </div>
     </div>
     <div class="col-md-2">
-      <div class="hit-points"></div>
+      <app-character-hit-point-details></app-character-hit-point-details>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <app-character-skill-details></app-character-skill-details>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <app-character-racial-trait-details></app-character-racial-trait-details>
+      </div>
+      <div class="row">
+        <app-character-class-feature-details></app-character-class-feature-details>
+      </div>
+      <div class="row">
+        <app-character-feat-details></app-character-feat-details>
+      </div>
+      <div class="row">
+        <app-character-language-details></app-character-language-details>
+      </div>
     </div>
   </div>
 </div>

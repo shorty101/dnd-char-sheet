@@ -10,6 +10,11 @@ import { CharacterAttackDetailsComponent } from './components/character-attack-d
 import { CharacterSpeedInitGrappleDetailsComponent } from './components/character-speed-init-grapple-details/character-speed-init-grapple-details.component';
 import { CharacterSaveDetailsComponent } from './components/character-save-details/character-save-details.component';
 import { CharacterSkillDetailsComponent } from './components/character-skill-details/character-skill-details.component';
+import { CharacterHitPointDetailsComponent } from './components/character-hit-point-details/character-hit-point-details.component';
+import { CharacterRacialTraitDetailsComponent } from './components/character-racial-trait-details/character-racial-trait-details.component';
+import { CharacterFeatDetailsComponent } from './components/character-feat-details/character-feat-details.component';
+import { CharacterLanguageDetailsComponent } from './components/character-language-details/character-language-details.component';
+import { CharacterClassFeatureDetailsComponent } from './components/character-class-feature-details/character-class-feature-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { CharacterSkillDetailsComponent } from './components/character-skill-det
     CharacterAttackDetailsComponent,
     CharacterSpeedInitGrappleDetailsComponent,
     CharacterSaveDetailsComponent,
-    CharacterSkillDetailsComponent
+    CharacterSkillDetailsComponent,
+    CharacterHitPointDetailsComponent,
+    CharacterRacialTraitDetailsComponent,
+    CharacterFeatDetailsComponent,
+    CharacterLanguageDetailsComponent,
+    CharacterClassFeatureDetailsComponent
   ],
   imports: [
     BrowserModule,

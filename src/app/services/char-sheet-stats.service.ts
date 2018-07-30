@@ -166,7 +166,79 @@ export class CharSheetStatsService {
       "UsableUntrained": true,
       "ArmourCheckPenalty": 1
     },
+    "Knowledge (arcana)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (arch/eng)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (dungeoneering)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (geography)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
     "Knowledge (history)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (local)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (nature)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (nobility/royalty)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (the planes)": {
+      "Attribute":"INT",
+      "Ranks": 0,
+      "MiscBonus": 0,
+      "ClassSkill": false,
+      "UsableUntrained": false,
+      "ArmourCheckPenalty": 0
+    },
+    "Knowledge (psionics)": {
       "Attribute":"INT",
       "Ranks": 0,
       "MiscBonus": 0,
@@ -395,6 +467,19 @@ export class CharSheetStatsService {
   }
 
   constructor() {
+    this.characterTraits.Name = "Ben Swolo";
+    this.characterTraits.Player = "Ben Mackay";
+    this.characterTraits.ECL = "1";
+    this.characterTraits.Race = "Human";
+    this.characterTraits.Size = "M";
+    this.characterTraits.Gender = "M";
+    this.characterTraits.Alignment = "LG";
+    this.characterTraits.Religion = "Silver Flame";
+    this.characterTraits.Height = "5'11\"";
+    this.characterTraits.Weight = "180lbs";
+    this.characterTraits.Looks = "Paladin-y";
+
+
     this.attributes.STR = 17;
     this.attributes.DEX = 13;
     this.attributes.CON = 14;
@@ -453,6 +538,19 @@ export class CharSheetStatsService {
     this.armour.MaxSpeed = 20;
     this.armour.ArcaneSpellFailure = 0.3;
     this.armour.ArmourCheckPenalty = -5;
+  }
+
+  public getClassAndLevel() {
+    let classText = "";
+    let moreThanOne = false;
+    for(let classUsed in this.classesUsed) {
+      if (moreThanOne) {
+        classText = classText + "/";
+      }
+      classText = classText + classUsed + " " + this.classesUsed[classUsed].Levels;
+      moreThanOne = true;
+    }
+    return classText;
   }
 
   public getStatBonus(stat) {
