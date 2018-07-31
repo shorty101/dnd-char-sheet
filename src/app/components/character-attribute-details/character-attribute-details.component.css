@@ -1,0 +1,67 @@
+.ability-score {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h5.ability-scores-heading {
+    font-weight: bold;
+}
+
+.ability-score-name, .ability-score-total, .ability-score-base, .ability-score-enhance, .ability-score-misc-bonus, .ability-score-misc-penalty, .ability-score-modifier {
+    width: 14%;
+    display: inline-block;
+    position: relative;
+}
+
+.title-above {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.underline-above {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 1px solid #000000;
+}
+
+input.input-above {
+    border: none;
+    border-bottom: 1px solid #000000;
+    width: 70%;
+    padding: 0 5%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.box-above {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
+
+.text-below {
+    font-size: 5px;
+    display: grid;
+    text-align: center;
+    margin: 1px;
+}
+
+.between-scores {
+    position: absolute;
+    top: 30%;
+    right: -5%;
+    font-size: 8px;
+}
+
+.ability-score-total .fa-equals {
+    top: 35%;
+}
+
+.ability-score-misc-bonus .fa-minus {
+    top: 40%;
+}

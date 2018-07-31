@@ -19,13 +19,15 @@ export class CharacterSkillDetailsComponent implements OnInit {
   public setSkills() {
     for (let skill in this.stats.skills) {
       if (this.stats.skills[skill].Ranks > 0 || this.stats.skills[skill].UsableUntrained) {
+        this.skills[skill] = {};
         if (this.stats.skills[skill].Attribute === "DEX") {
-          this.skills[skill] = this.stats.getCappedDexMod();
+          this.skills[skill]["AbilityMod"] = this.stats.getCappedDexMod();
         } else {
-          this.skills[skill] = this.stats.getStatBonus(this.stats.skills[skill].Attribute);
+          this.skills[skill]["AbilityMod"] = this.stats.getStatBonus(this.stats.skills[skill].Attribute);
         }
-        this.skills[skill] = this.skills[skill] + this.stats.skills[skill].Ranks;
-        this.skills[skill] = this.skills[skill] + (this.stats.armour.ArmourCheckPenalty * this.stats.skills[skill].ArmourCheckPenalty);
+        this.skills[skill]["Ranks"] = this.stats.skills[skill].Ranks;
+        this.skills[skill]["MiscMod"] = (this.stats.armour.ArmourCheckPenalty * this.stats.skills[skill].ArmourCheckPenalty);
+        this.skills[skill]["SkillMod"] = this.skills[skill].AbilityMod + this.skills[skill].Ranks + this.skills[skill].MiscMod
       }
     }
     this.skillsKey = Object.keys(this.skills);

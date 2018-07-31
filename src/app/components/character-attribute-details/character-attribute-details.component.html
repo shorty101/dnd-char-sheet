@@ -1,26 +1,207 @@
-<div class="ability-scores">
-  <div class="ability-score">
-    <p>{{this.STR}}</p>
-    <p>{{this.printStatBonus("STR")}}</p>
+<div class="ability-scores col-md-6">
+  <h5 class="ability-scores-heading">Ability Scores</h5>
+  <div class="ability-score col-md-12">
+    <div class="ability-score-name">
+      <span class="title-above">STR</span>
+      <span class="text-below">STRENGTH</span>
+    </div>
+    <div class="ability-score-total">
+      <span class="underline-above">{{this.STR}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="ability-score-base">
+      <input class="input-above">
+      <span class="text-below">BASE SCORE + RACIAL MOD</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-enhance">
+      <input class="input-above">
+      <span class="text-below">ENHANCEMENT BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-bonus">
+      <input class="input-above">
+      <span class="text-below">MISC. BONUSES</span>
+      <i class="fa fa-minus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-penalty">
+      <input class="input-above">
+      <span class="text-below">MISC. PENALTIES</span>
+    </div>
+    <div class="ability-score-modifier">
+      <span class="box-above">{{this.printStatBonus("STR")}}</span>
+      <span class="text-below">STRENGTH MODIFIER</span>
+    </div>
   </div>
-  <div class="ability-score">
-    <p>{{this.DEX}}</p>
-    <p>{{this.printStatBonus("DEX")}}</p>
+  <div class="ability-score col-md-12">
+    <div class="ability-score-name">
+      <span class="title-above">DEX</span>
+      <span class="text-below">DEXTERITY</span>
+    </div>
+    <div class="ability-score-total">
+      <span class="underline-above">{{this.DEX}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="ability-score-base">
+      <input class="input-above">
+      <span class="text-below">BASE SCORE + RACIAL MOD</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-enhance">
+      <input class="input-above">
+      <span class="text-below">ENHANCEMENT BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-bonus">
+      <input class="input-above">
+      <span class="text-below">MISC. BONUSES</span>
+      <i class="fa fa-minus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-penalty">
+      <input class="input-above">
+      <span class="text-below">MISC. PENALTIES</span>
+    </div>
+    <div class="ability-score-modifier">
+      <span class="box-above">{{this.printStatBonus("DEX")}}</span>
+      <span class="text-below">DEXTERITY MODIFIER</span>
+    </div>
   </div>
-  <div class="ability-score">
-    <p>{{this.CON}}</p>
-    <p>{{this.printStatBonus("CON")}}</p>
+  <div class="ability-score col-md-12">
+    <div class="ability-score-name">
+      <span class="title-above">CON</span>
+      <span class="text-below">CONSTITUTION</span>
+    </div>
+    <div class="ability-score-total">
+      <span class="underline-above">{{this.CON}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="ability-score-base">
+      <input class="input-above">
+      <span class="text-below">BASE SCORE + RACIAL MOD</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-enhance">
+      <input class="input-above">
+      <span class="text-below">ENHANCEMENT BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-bonus">
+      <input class="input-above">
+      <span class="text-below">MISC. BONUSES</span>
+      <i class="fa fa-minus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-penalty">
+      <input class="input-above">
+      <span class="text-below">MISC. PENALTIES</span>
+    </div>
+    <div class="ability-score-modifier">
+      <span class="box-above">{{this.printStatBonus("CON")}}</span>
+      <span class="text-below">CONSTITUTION MODIFIER</span>
+    </div>
   </div>
-  <div class="ability-score">
-    <p>{{this.INT}}</p>
-    <p>{{this.printStatBonus("INT")}}</p>
+  <div class="ability-score col-md-12">
+    <div class="ability-score-name">
+      <span class="title-above">INT</span>
+      <span class="text-below">INTELLIGENCE</span>
+    </div>
+    <div class="ability-score-total">
+      <span class="underline-above">{{this.INT}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="ability-score-base">
+      <input class="input-above">
+      <span class="text-below">BASE SCORE + RACIAL MOD</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-enhance">
+      <input class="input-above">
+      <span class="text-below">ENHANCEMENT BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-bonus">
+      <input class="input-above">
+      <span class="text-below">MISC. BONUSES</span>
+      <i class="fa fa-minus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-penalty">
+      <input class="input-above">
+      <span class="text-below">MISC. PENALTIES</span>
+    </div>
+    <div class="ability-score-modifier">
+      <span class="box-above">{{this.printStatBonus("INT")}}</span>
+      <span class="text-below">INTELLIGENCE MODIFIER</span>
+    </div>
   </div>
-  <div class="ability-score">
-    <p>{{this.WIS}}</p>
-    <p>{{this.printStatBonus("WIS")}}</p>
+  <div class="ability-score col-md-12">
+    <div class="ability-score-name">
+      <span class="title-above">WIS</span>
+      <span class="text-below">WISDOM</span>
+    </div>
+    <div class="ability-score-total">
+      <span class="underline-above">{{this.WIS}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="ability-score-base">
+      <input class="input-above">
+      <span class="text-below">BASE SCORE + RACIAL MOD</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-enhance">
+      <input class="input-above">
+      <span class="text-below">ENHANCEMENT BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-bonus">
+      <input class="input-above">
+      <span class="text-below">MISC. BONUSES</span>
+      <i class="fa fa-minus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-penalty">
+      <input class="input-above">
+      <span class="text-below">MISC. PENALTIES</span>
+    </div>
+    <div class="ability-score-modifier">
+      <span class="box-above">{{this.printStatBonus("WIS")}}</span>
+      <span class="text-below">WISDOM MODIFIER</span>
+    </div>
   </div>
-  <div class="ability-score">
-    <p>{{this.CHA}}</p>
-    <p>{{this.printStatBonus("CHA")}}</p>
+  <div class="ability-score col-md-12">
+    <div class="ability-score-name">
+      <span class="title-above">CHA</span>
+      <span class="text-below">CHARISMA</span>
+    </div>
+    <div class="ability-score-total">
+      <span class="underline-above">{{this.CHA}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="ability-score-base">
+      <input class="input-above">
+      <span class="text-below">BASE SCORE + RACIAL MOD</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-enhance">
+      <input class="input-above">
+      <span class="text-below">ENHANCEMENT BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-bonus">
+      <input class="input-above">
+      <span class="text-below">MISC. BONUSES</span>
+      <i class="fa fa-minus between-scores"></i>
+    </div>
+    <div class="ability-score-misc-penalty">
+      <input class="input-above">
+      <span class="text-below">MISC. PENALTIES</span>
+    </div>
+    <div class="ability-score-modifier">
+      <span class="box-above">{{this.printStatBonus("CHA")}}</span>
+      <span class="text-below">CHARISMA MODIFIER</span>
+    </div>
   </div>
 </div>

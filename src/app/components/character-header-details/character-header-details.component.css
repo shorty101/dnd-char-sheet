@@ -1,0 +1,9 @@
+span.text-above {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #000000;
+}
+
+span.text-below {
+    font-size: 11px;
+}

@@ -1,4 +1,12 @@
-<div class="skill" *ngFor="let skill of skillsKey">
-  <span>{{skill}}</span>
-  <span>{{this.skills[skill]}}</span>
+<h5>Skills</h5>
+<div class="skill col-md-12" *ngFor="let skill of skillsKey">
+  <span class="col-md-4 skill-name">{{skill}}</span>
+  <span class="col-md-1 key-ability">{{this.stats.skills[skill].Attribute}}</span>
+  <span class="col-md-1 skill-mod">{{this.skills[skill].SkillMod}}</span>
+  <i class="fa fa-equals between-scores"></i>
+  <span class="col-md-1 ranks">{{this.skills[skill].AbilityMod}}</span>
+  <i class="fa fa-plus between-scores"></i>
+  <span class="col-md-1 ability-mod">{{this.skills[skill].Ranks}}</span>
+  <i class="fa fa-plus between-scores"></i>
+  <span class="col-md-1 misc-mod">{{this.skills[skill].MiscMod}}</span>
 </div>
