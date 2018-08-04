@@ -1,3 +1,85 @@
-.skill span {
-    display: grid;
+.skill-table-header {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.skill-column-header-skill-mod {
+    padding-left: 10px;
+}
+
+.skill {
+    font-size: 12px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.skill div {
+    display: inline-flex;
+}
+
+.skill .key-ability {
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+}
+
+.skill .key-ability span {
+    width: 100%;
+}
+
+.skill .skill-calc-line {
+    padding: 0;
+}
+
+.skill .skill-calc-line .skill-mod span {
+    border: 1px solid #000000;
+}
+
+.skill .skill-calc-line .col-md-3 {
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.skill .skill-calc-line .col-md-3 span {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 1px solid #000000;
+}
+
+.skill .skill-name {
+    padding: 0px;
+}
+
+.between-scores {
+    position: absolute;
+    top: 40%;
+    right: -10%;
+    font-size: 8px;
+}
+
+input.score {
+    height: 18px;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    padding: 0;
+    width: 60%;
+    text-align: center;
+    background: transparent;
+    margin: 0 auto;
+}
+
+.class-skill-header {
+    font-size: 6px;
+    padding-top: 5px;
+    padding-right: 3px;
+    vertical-align: top;
+}
+
+.class-skill {
+    font-size: 6px;
+    padding-top: 7px;
+    padding-left: 3px;
 }

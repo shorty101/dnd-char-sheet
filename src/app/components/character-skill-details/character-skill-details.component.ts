@@ -27,7 +27,11 @@ export class CharacterSkillDetailsComponent implements OnInit {
         }
         this.skills[skill]["Ranks"] = this.stats.skills[skill].Ranks;
         this.skills[skill]["MiscMod"] = (this.stats.armour.ArmourCheckPenalty * this.stats.skills[skill].ArmourCheckPenalty);
-        this.skills[skill]["SkillMod"] = this.skills[skill].AbilityMod + this.skills[skill].Ranks + this.skills[skill].MiscMod
+        this.skills[skill]["SkillMod"] = this.skills[skill].AbilityMod + this.skills[skill].Ranks + this.skills[skill].MiscMod;
+        if (this.skills[skill]["SkillMod"] >= 0) {
+          this.skills[skill]["SkillMod"] = "+" + this.skills[skill]["SkillMod"]
+        }
+        this.skills[skill]["ClassSkill"] = this.stats.skills[skill].ClassSkill;
       }
     }
     this.skillsKey = Object.keys(this.skills);

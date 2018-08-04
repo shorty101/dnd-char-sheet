@@ -1,12 +1,41 @@
 <h5>Skills</h5>
+<div class="skill-table-header row">
+  <div class="col-md-5 text-left pl-4">
+    <span class="skill-column-header d-block">Skill Name</span>
+    <i class="fa fa-circle class-skill-header"></i>
+    <span class="skill-column-header">= class skill</span>
+  </div>
+  <span class="skill-column-header col-md-1 px-0">Key Ability</span>
+  <div class="skill-table-heeader-spacing col-md-6 row">
+    <span class="skill-column-header-skill-mod col-md-3">Skill Mod</span>
+    <span class="skill-column-header-ability-mod col-md-3">Ability Mod</span>
+    <span class="skill-column-header-skill-ranks col-md-3">Skill Ranks</span>
+    <span class="skill-column-header-misc-mod col-md-3">Misc Mod</span>
+  </div>
+</div>
 <div class="skill col-md-12" *ngFor="let skill of skillsKey">
-  <span class="col-md-4 skill-name">{{skill}}</span>
-  <span class="col-md-1 key-ability">{{this.stats.skills[skill].Attribute}}</span>
-  <span class="col-md-1 skill-mod">{{this.skills[skill].SkillMod}}</span>
-  <i class="fa fa-equals between-scores"></i>
-  <span class="col-md-1 ranks">{{this.skills[skill].AbilityMod}}</span>
-  <i class="fa fa-plus between-scores"></i>
-  <span class="col-md-1 ability-mod">{{this.skills[skill].Ranks}}</span>
-  <i class="fa fa-plus between-scores"></i>
-  <span class="col-md-1 misc-mod">{{this.skills[skill].MiscMod}}</span>
+  <div class="skill-name col-md-5">
+    <span class="text">{{skill}}</span>
+    <i class="fa fa-circle class-skill" *ngIf="this.stats.skills[skill].ClassSkill"></i>
+  </div>
+  <div class="key-ability col-md-1">
+    <span class="text">{{this.stats.skills[skill].Attribute}}</span>
+  </div>
+  <div class="skill-calc-line col-md-6">
+    <div class="skill-mod col-md-3">
+      <span class="score">{{this.skills[skill].SkillMod}}</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="skill-ranks col-md-3">
+      <span class="score">{{this.skills[skill].AbilityMod}}</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability-mod col-md-3">
+      <span class="score">{{this.skills[skill].Ranks}}</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="misc-mod col-md-3">
+      <input class="score" value="{{this.skills[skill].MiscMod}}" />
+    </div>
+  </div>
 </div>
