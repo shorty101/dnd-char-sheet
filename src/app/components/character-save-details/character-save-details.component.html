@@ -1,12 +1,117 @@
-<div class="save">
-  <span>Fort</span>
-  <span>{{this.Fort}}</span>
-</div>
-<div class="save">
-  <span>Reflex</span>
-  <span>{{this.Reflex}}</span>
-</div>
-<div class="save">
-  <span>Will</span>
-  <span>{{this.Will}}</span>
+<h5>Saving Throws</h5>
+<div class="saving-throw-block">
+  <div class="saving-throws col-md-8">
+    <div class="saving-throw-headings w-100">
+      <div class="title-spacer"></div>
+      <div class="heading">
+        <span class="heading-text">Total</span>
+      </div>
+      <div class="heading">
+        <span class="heading-text">Base Save</span>
+      </div>
+      <div class="heading">
+        <span class="heading-text">Ability Modifier</span>
+      </div>
+      <div class="heading">
+        <span class="heading-text">Magic Modifier</span>
+      </div>
+      <div class="heading">
+        <span class="heading-text">Misc. Modifier</span>
+      </div>
+      <div class="heading">
+        <span class="heading-text">Temp. Modifier</span>
+      </div>
+    </div>
+    <div class="save w-100">
+      <div class="title">
+        <span class="save-name">Fortitude</span>
+        <span class="save-ability">(Constitution)</span>
+      </div>
+      <div class="total">
+        <span class="score">+{{this.Fort}}</span>
+        <i class="fa fa-equals between-scores"></i>
+      </div>
+      <div class="base">
+        <span class="score">{{this.stats.calculateSaveBonus("Fort")}}</span>
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="ability">
+        <span class="score">{{this.stats.getStatBonus("CON")}}</span>
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="magic">
+        <input class="score" />
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="misc">
+        <input class="score" />
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="temp">
+        <input class="score" />
+      </div>
+    </div>
+    <div class="save w-100">
+      <div class="title">
+        <span class="save-name">Reflex</span>
+        <span class="save-ability">(Dexterity)</span>
+      </div>
+      <div class="total">
+        <span class="score">+{{this.Reflex}}</span>
+        <i class="fa fa-equals between-scores"></i>
+      </div>
+      <div class="base">
+        <span class="score">{{this.stats.calculateSaveBonus("Reflex")}}</span>
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="ability">
+        <span class="score">{{this.stats.getCappedDexMod()}}</span>
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="magic">
+        <input class="score" />
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="misc">
+        <input class="score" />
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="temp">
+        <input class="score" />
+      </div>
+    </div>
+    <div class="save w-100">
+      <div class="title">
+        <span class="save-name">Will</span>
+        <span class="save-ability">(Wisdom)</span>
+      </div>
+      <div class="total">
+        <span class="score">+{{this.Will}}</span>
+        <i class="fa fa-equals between-scores"></i>
+      </div>
+      <div class="base">
+        <span class="score">{{this.stats.calculateSaveBonus("Will")}}</span>
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="ability">
+        <span class="score">{{this.stats.getStatBonus("WIS")}}</span>
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="magic">
+        <input class="score" />
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="misc">
+        <input class="score" />
+        <i class="fa fa-plus between-scores"></i>
+      </div>
+      <div class="temp">
+        <input class="score" />
+      </div>
+    </div>
+  </div>
+  <div class="conditional-mods col-md-4">
+    <span class="conditional-mod-title">Conditional Modifiers</span>
+    <textarea></textarea>
+  </div>
 </div>
