@@ -9,10 +9,38 @@ import { CharSheetStatsService } from './../../services/char-sheet-stats.service
 export class CharacterHitPointDetailsComponent implements OnInit {
   hp: number;
   dd_pool: number;
+  stances: any;
+  stance_names = [];
+  crusader_maneuvers: any;
+  crusader_maneuver_names = [];
+  swordsage_maneuvers: any;
+  swordsage_maneuver_names = [];
+  has_delayed_damage_pool = false;
 
   constructor(public stats: CharSheetStatsService) { }
 
   ngOnInit() {
+    if (Object.keys(this.stats.stancesKnown).length === 0 && this.stats.stancesKnown.constructor === Object) {
+      this.stances = null;
+    } else {
+      this.stances = this.stats.stancesKnown;
+      this.stance_names = Object.keys(this.stances);
+    }
+    if (Object.keys(this.stats.crusaderManeuversKnown).length === 0 && this.stats.crusaderManeuversKnown.constructor === Object) {
+      this.crusader_maneuvers = null;
+    } else {
+      this.crusader_maneuvers = this.stats.crusaderManeuversKnown;
+      this.crusader_maneuver_names = Object.keys(this.crusader_maneuvers);
+    }
+    if (Object.keys(this.stats.swordsageManeuversKnown).length === 0 && this.stats.swordsageManeuversKnown.constructor === Object) {
+      this.swordsage_maneuvers = null;
+    } else {
+      this.swordsage_maneuvers = this.stats.swordsageManeuversKnown;
+      this.swordsage_maneuver_names = Object.keys(this.swordsage_maneuvers);
+    }
+    if (Object.keys(this.stats.classesUsed).includes("Crusader")) {
+      this.has_delayed_damage_pool = true;
+    }
   }
 
   calculateHp(logic: String) {

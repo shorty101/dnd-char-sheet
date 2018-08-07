@@ -11,33 +11,27 @@
     <span class="title">Current Non-Lethal</span>
     <input>
   </div>
-  <div class="delayed-damage-pool" *ngIf="">
+  <div class="delayed-damage-pool" *ngIf="this.has_delayed_damage_pool">
     <span class="title">Delayed Damage Pool</span>
     <input class="damage-held">
     <span class=""></span>
   </div>
-  <div class="crusader-maneuvers-known" *ngIf="">
-    <span class="title">Maneuvers Known</span>
-    <ul>
-      <li *ngFor=""></li>
+  <div class="crusader-maneuvers-known" *ngIf="this.crusader_maneuvers">
+    <span class="title">Crusader Maneuvers Known</span>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let c_maneuver of crusader_maneuver_names">{{c_maneuver}}</li>
     </ul>
   </div>
-  <div class="crusader-stances-known" *ngIf="">
+  <div class="swordsage-maneuvers-known" *ngIf="this.swordsage_maneuvers">
+    <span class="title">Swordsage Maneuvers Known</span>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let s_maneuver of swordsage_maneuver_names">{{s_maneuver}}</li>
+    </ul>
+  </div>
+  <div class="stances-known" *ngIf="this.stances">
     <span class="title">Stances Known</span>
-    <ul>
-      <li *ngFor=""></li>
-    </ul>
-  </div>
-  <div class="swordsage-maneuvers-known" *ngIf="">
-    <span class="title">Maneuvers Known</span>
-    <ul>
-        <li *ngFor=""></li>
-    </ul>
-  </div>
-  <div class="swordsage-stances-known" *ngIf="">
-    <span class="title">Stances Known</span>
-    <ul>
-      <li *ngFor=""></li>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let stance of stance_names">{{stance}}</li>
     </ul>
   </div>
 </div>
