@@ -1,0 +1,25 @@
+.hit-points {
+    border: 1px solid #000000;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    display: block;
+    background: #000000;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hp span {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.current-hp input, .current-non-lethal input, .delayed-damage-pool input {
+    width: 100%;
+    border: none;
+    text-align: center;
+}

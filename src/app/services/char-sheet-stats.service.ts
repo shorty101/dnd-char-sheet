@@ -409,6 +409,8 @@ export class CharSheetStatsService {
   }
 
   public classesUsed = {}
+  public firstLevelledClass = "";
+  public lastLevelledClass = "";
   public racialTraits = {}
   public classFeatures = {}
   public languages = []
@@ -507,13 +509,29 @@ export class CharSheetStatsService {
 
     this.classesUsed = {
       "Crusader": {
-        "Levels": 1,
+        "Levels": 3,
+        "HitDice": 10,
         "BAB": "Full",
         "Fort": "Strong",
         "Ref": "Weak",
-        "Will": "Weak"
+        "Will": "Weak",
+        "SkillsPerLevel": 4,
+        "ClassSkills": [
+          "Balance",
+          "Craft",
+          "Concentration",
+          "Diplmoacy",
+          "Intimidate",
+          "Knowledge (history)",
+          "Knowledge (religion)",
+          "Martial Lore",
+          "Ride"
+        ]
       }
     }
+    
+    this.firstLevelledClass = "Crusader";
+    this.lastLevelledClass = "Crusader";
 
     this.racialTraits = {
       "Extra Feat": "Gain 1 extra feat at 1st level.",

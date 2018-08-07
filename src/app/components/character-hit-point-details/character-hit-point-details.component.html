@@ -1,3 +1,43 @@
 <div class="hit-points">
-  
+  <div class="hp">
+    <span class="title">Hit Points</span>
+    <span>{{this.calculateHp("HalfPlus1Add5")}}</span>
+  </div>
+  <div class="current-hp">
+    <span class="title">Current Hit Points</span>
+    <input>
+  </div>
+  <div class="current-non-lethal">
+    <span class="title">Current Non-Lethal</span>
+    <input>
+  </div>
+  <div class="delayed-damage-pool" *ngIf="">
+    <span class="title">Delayed Damage Pool</span>
+    <input class="damage-held">
+    <span class=""></span>
+  </div>
+  <div class="crusader-maneuvers-known" *ngIf="">
+    <span class="title">Maneuvers Known</span>
+    <ul>
+      <li *ngFor=""></li>
+    </ul>
+  </div>
+  <div class="crusader-stances-known" *ngIf="">
+    <span class="title">Stances Known</span>
+    <ul>
+      <li *ngFor=""></li>
+    </ul>
+  </div>
+  <div class="swordsage-maneuvers-known" *ngIf="">
+    <span class="title">Maneuvers Known</span>
+    <ul>
+        <li *ngFor=""></li>
+    </ul>
+  </div>
+  <div class="swordsage-stances-known" *ngIf="">
+    <span class="title">Stances Known</span>
+    <ul>
+      <li *ngFor=""></li>
+    </ul>
+  </div>
 </div>
