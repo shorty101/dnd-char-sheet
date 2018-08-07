@@ -1,12 +1,41 @@
-<div class="col-md-8 d-inline-block">
-  <span>Speed</span>
-  <p>{{this.speed}}</p>
+<div class="col-md-4 d-inline-block row">
+  <span class="misc-title col-md-4">BAB</span>
+  <span  class="misc-text col-md-7">{{this.getPrintableBAB()}}</span>
 </div>
-<div class="col-md-4 d-inline-block">
-  <span>Initiative</span>
-  <p>{{this.initBonus}}</p>
+<div class="col-md-3 d-inline-block row">
+  <span class="misc-title col-md-5">Speed</span>
+  <span class="misc-text col-md-6">{{this.speed}}ft</span>
 </div>
-<div class="col-md-12 d-inline-block">
-  <span>Grapple</span>
-  <p>{{this.grapple}}</p>
+<div class="col-md-4 d-inline-block row">
+  <span class="misc-title col-md-4">Initiative</span>
+  <span class="misc-text col-md-4">{{this.getPrintableInit()}}</span>
+</div>
+<div class="col-md-7 d-inline-block row mt-3">
+  <span class="misc-title col-md-2">Grapple</span>
+  <div class="misc-text no-underline col-md-8">
+    <div class="total">
+      <span class="score">+{{this.grapple}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="bab">
+      <span class="score">{{this.bab}}</span>
+      <span class="text-below">BASE ATTACK BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="ability">
+      <span class="score">{{this.stats.getStatBonus("STR")}}</span>
+      <span class="text-below">STRENGTH BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="size">
+      <span class="score">{{this.sizeBonus}}</span>
+      <span class="text-below">SIZE BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="misc">
+      <input class="score" />
+      <span class="text-below">MISC. BONUS</span>
+    </div>
+  </div>
 </div>

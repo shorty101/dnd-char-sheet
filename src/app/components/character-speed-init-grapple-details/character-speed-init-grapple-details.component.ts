@@ -11,6 +11,8 @@ export class CharacterSpeedInitGrappleDetailsComponent implements OnInit {
   public initBonus: number;
   public speed: number;
   public grapple: number;
+  public bab: number;
+  public sizeBonus: number;
 
   constructor(public stats: CharSheetStatsService) { }
 
@@ -20,7 +22,27 @@ export class CharacterSpeedInitGrappleDetailsComponent implements OnInit {
       this.initBonus = this.initBonus + 4;
     }
     this.speed = Math.max(this.stats.characterTraits.Speed, this.stats.armour.MaxSpeed);
-    this.grapple = this.stats.getStatBonus("STR") + this.stats.getBAB() + this.stats.sizeTable[this.stats.characterTraits.Size].Grapple;
+    this.sizeBonus = this.stats.sizeTable[this.stats.characterTraits.Size].Grapple;
+    this.bab = this.stats.getBAB();
+    this.grapple = this.stats.getStatBonus("STR") + this.bab + this.sizeBonus;
+  }
+
+  getPrintableBAB() {
+    let remainingBab = this.bab;
+    let output = "+" + remainingBab;
+    while (remainingBab > 5) {
+      remainingBab = remainingBab - 5;
+      output = output + " / +" + remainingBab;
+    }
+    return output;
+  }
+
+  getPrintableInit() {
+    if (this.initBonus >= 0) {
+      return "+" + this.initBonus;
+    } else {
+      return this.initBonus;
+    }
   }
 
 }
