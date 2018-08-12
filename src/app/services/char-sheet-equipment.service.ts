@@ -44,6 +44,16 @@ export class CharSheetEquipmentService {
     "Notes": ""
   }
 
+  public naturalArmour = {
+    "Base": 0,
+    "Enhancement": 0
+  }
+
+  public deflectionModifier = {
+    "Base": 0,
+    "Enhancement": 0
+  }
+
   constructor() {
     this.weapons = {
       "Greatsword": {
@@ -105,7 +115,44 @@ export class CharSheetEquipmentService {
     } else {
       dexCap = this.shield["Max Dex"];
     }
-    console.log(dexCap);
     return dexCap;
+  }
+
+  getArmourBonus() {
+    return this.armour["Armour Bonus"] + this.armour["Enhancement"];
+  }
+
+  getShieldBonus() {
+    return this.shield["Shield Bonus"] + this.shield["Enhancement"];
+  }
+
+  getArcaneSpellFailure() {
+    let asf =  (this.armour["Arcane Spell Failure"] + this.shield["Arcane Spell Failure"]) * 100;
+    return asf.toString() + "%";
+  }
+
+  getArmourCheckPenalty() {
+    let armACP = this.armour["Base Armour Check Penalty"];
+    if (armACP < 0 && this.armour["Masterwork"]) {
+      armACP = armACP + 1;
+    }
+    let shieldACP = this.shield["Base Armour Check Penalty"];
+    if (shieldACP < 0 && this.shield["Masterwork"]) {
+      shieldACP = shieldACP + 1;
+    }
+    return armACP + shieldACP;
+  }
+
+  getSpeedReduction(speed) {
+    let keyString = "Speed Reduction " + speed;
+    return this.armour[keyString];
+  }
+
+  getNaturalArmour() {
+    return this.naturalArmour["Base"] + this.naturalArmour["Enhancement"];
+  }
+
+  getDeflectionMod() {
+    return this.deflectionModifier["Base"] + this.deflectionModifier["Enhancement"];
   }
 }

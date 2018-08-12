@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharSheetStatsService } from '../../services/char-sheet-stats.service';
+import { CharSheetEquipmentService } from '../../services/char-sheet-equipment.service';
 
 @Component({
   selector: 'app-character-skill-details',
@@ -12,7 +13,7 @@ export class CharacterSkillDetailsComponent implements OnInit {
   public filteredSkills = {};
   public filteredSkillsKey = [];
 
-  constructor(public stats: CharSheetStatsService) { }
+  constructor(public stats: CharSheetStatsService, public equipment: CharSheetEquipmentService) { }
 
   ngOnInit() {
     this.setSkills();
@@ -30,7 +31,7 @@ export class CharacterSkillDetailsComponent implements OnInit {
           this.skills[skill]["AbilityMod"] = this.stats.getStatBonus(this.stats.skills[skill].Attribute);
         }
         this.skills[skill]["Ranks"] = this.stats.skills[skill].Ranks;
-        this.skills[skill]["MiscMod"] = (this.stats.armour.ArmourCheckPenalty * this.stats.skills[skill].ArmourCheckPenalty);
+        this.skills[skill]["MiscMod"] = (this.equipment.getArmourCheckPenalty() * this.stats.skills[skill].ArmourCheckPenalty);
         this.skills[skill]["SkillMod"] = this.skills[skill].AbilityMod + this.skills[skill].Ranks + this.skills[skill].MiscMod;
         if (this.skills[skill]["SkillMod"] >= 0) {
           this.skills[skill]["SkillMod"] = "+" + this.skills[skill]["SkillMod"]
