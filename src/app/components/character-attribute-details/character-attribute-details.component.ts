@@ -39,18 +39,24 @@ export class CharacterAttributeDetailsComponent implements OnInit {
   public miscChaPenalty: number = 0;
 
   constructor(public stats: CharSheetStatsService) { 
-    this.baseStr = this.stats.attributes.STR;
-    this.baseDex = this.stats.attributes.DEX;
-    this.baseCon = this.stats.attributes.CON;
-    this.baseInt = this.stats.attributes.INT;
-    this.baseWis = this.stats.attributes.WIS;
-    this.baseCha = this.stats.attributes.CHA;
+    this.baseStr = this.stats.base_attributes.STR;
+    this.baseDex = this.stats.base_attributes.DEX;
+    this.baseCon = this.stats.base_attributes.CON;
+    this.baseInt = this.stats.base_attributes.INT;
+    this.baseWis = this.stats.base_attributes.WIS;
+    this.baseCha = this.stats.base_attributes.CHA;
     this.STR = this.baseStr + this.enhanceStr + this.miscStrBonus + this.miscStrPenalty;
     this.DEX = this.baseDex + this.enhanceDex + this.miscDexBonus + this.miscDexPenalty;
     this.CON = this.baseCon + this.enhanceCon + this.miscConBonus + this.miscConPenalty;
     this.INT = this.baseInt + this.enhanceInt + this.miscIntBonus + this.miscIntPenalty;
     this.WIS = this.baseWis + this.enhanceWis + this.miscWisBonus + this.miscWisPenalty;
     this.CHA = this.baseCha + this.enhanceCha + this.miscChaBonus + this.miscChaPenalty;
+    this.stats.setAttribute("STR", this.STR);
+    this.stats.setAttribute("DEX", this.DEX);
+    this.stats.setAttribute("CON", this.CON);
+    this.stats.setAttribute("INT", this.INT);
+    this.stats.setAttribute("WIS", this.WIS);
+    this.stats.setAttribute("CHA", this.CHA);
   }
 
   ngOnInit() {

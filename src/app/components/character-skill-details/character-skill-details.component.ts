@@ -9,11 +9,15 @@ import { CharSheetStatsService } from '../../services/char-sheet-stats.service';
 export class CharacterSkillDetailsComponent implements OnInit {
   public skills = {};
   public skillsKey = [];
+  public filteredSkills = {};
+  public filteredSkillsKey = [];
 
   constructor(public stats: CharSheetStatsService) { }
 
   ngOnInit() {
     this.setSkills();
+    this.filteredSkills = this.skills;
+    this.filteredSkillsKey = this.skillsKey;
   }
 
   public setSkills() {
@@ -37,4 +41,20 @@ export class CharacterSkillDetailsComponent implements OnInit {
     this.skillsKey = Object.keys(this.skills);
   }
 
+  public filterSkills(text) {
+    text = text.value.toLowerCase();
+    let filteredSkills = {};
+    let filteredSkillsKey = [];
+    let skills = this.skills;
+    let lowercaseSkillName = "";
+    this.skillsKey.forEach(function(skill) {
+      lowercaseSkillName = skill.toLowerCase();
+      if (lowercaseSkillName.includes(text)) {
+        filteredSkillsKey.push(skill);
+        filteredSkills[skill] = skills[skill];
+      }
+    });
+    this.filteredSkills = filteredSkills;
+    this.filteredSkillsKey = filteredSkillsKey;
+  }
 }

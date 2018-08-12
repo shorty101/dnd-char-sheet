@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
+import { CharSheetEquipmentService } from './char-sheet-equipment.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharSheetStatsService {
   public attributes = {
+    "STR": 8,
+    "DEX": 8,
+    "CON": 8,
+    "INT": 8,
+    "WIS": 8,
+    "CHA": 8,
+  }
+
+  public base_attributes = {
     "STR": 8,
     "DEX": 8,
     "CON": 8,
@@ -472,7 +482,7 @@ export class CharSheetStatsService {
   crusaderManeuversKnown = {};
   swordsageManeuversKnown = {};
 
-  constructor() {
+  constructor(public equipment: CharSheetEquipmentService) {
     this.characterTraits.Name = "Ben Swolo";
     this.characterTraits.Player = "Ben Mackay";
     this.characterTraits.ECL = "1";
@@ -486,12 +496,12 @@ export class CharSheetStatsService {
     this.characterTraits.Looks = "Paladin-y";
 
 
-    this.attributes.STR = 17;
-    this.attributes.DEX = 13;
-    this.attributes.CON = 14;
-    this.attributes.INT = 12;
-    this.attributes.WIS = 10;
-    this.attributes.CHA = 14;
+    this.base_attributes.STR = 17;
+    this.base_attributes.DEX = 13;
+    this.base_attributes.CON = 14;
+    this.base_attributes.INT = 12;
+    this.base_attributes.WIS = 10;
+    this.base_attributes.CHA = 14;
 
     this.skills.Balance.ClassSkill = true;
     this.skills.Craft.ClassSkill = true;
@@ -716,14 +726,19 @@ export class CharSheetStatsService {
     return classText;
   }
 
+  public setAttribute(stat, score) {
+    this.attributes[stat] = score;
+  }
+
   public getStatBonus(stat) {
     return Math.floor((this.attributes[stat] - 10)/2);
   }
 
   public getCappedDexMod() {
     let dex = this.getStatBonus("DEX");
-    if (dex > this.armour.MaxDex) {
-      return this.armour.MaxDex;
+    let cap = this.equipment.getDexCap();
+    if (cap !== null && dex > cap) {
+      return cap;
     } else {
       return dex;
     }

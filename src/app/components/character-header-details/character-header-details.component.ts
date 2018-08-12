@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CharSheetStatsService } from './../../services/char-sheet-stats.service';
+import { CharSheetStatsService } from '../../services/char-sheet-stats.service';
 
 @Component({
   selector: 'app-character-header-details',

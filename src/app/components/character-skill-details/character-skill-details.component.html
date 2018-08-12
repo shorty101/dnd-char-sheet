@@ -1,4 +1,9 @@
 <h5>Skills</h5>
+<div class="skill-filter row">
+  <div class="col-md-12">
+    <input class="filter-input" placeholder="Skill filter" (input)="filterSkills(skillFilter)" #skillFilter />
+  </div>
+</div>
 <div class="skill-table-header row">
   <div class="col-md-5 text-left pl-4">
     <span class="skill-column-header d-block">Skill Name</span>
@@ -13,29 +18,29 @@
     <span class="skill-column-header-misc-mod col-md-3">Misc Mod</span>
   </div>
 </div>
-<div class="skill col-md-12" *ngFor="let skill of skillsKey">
+<div class="skill col-md-12" *ngFor="let skill of filteredSkillsKey">
   <div class="skill-name col-md-5">
     <span class="text">{{skill}}</span>
-    <i class="fa fa-circle class-skill" *ngIf="this.stats.skills[skill].ClassSkill"></i>
+    <i class="fa fa-circle class-skill" *ngIf="this.filteredSkills[skill].ClassSkill"></i>
   </div>
   <div class="key-ability col-md-1">
-    <span class="text">{{this.stats.skills[skill].Attribute}}</span>
+    <span class="text">{{this.filteredSkills[skill].Attribute}}</span>
   </div>
   <div class="skill-calc-line col-md-6">
     <div class="skill-mod col-md-3">
-      <span class="score">{{this.skills[skill].SkillMod}}</span>
+      <span class="score">{{this.filteredSkills[skill].SkillMod}}</span>
       <i class="fa fa-equals between-scores"></i>
     </div>
     <div class="skill-ranks col-md-3">
-      <span class="score">{{this.skills[skill].AbilityMod}}</span>
+      <span class="score">{{this.filteredSkills[skill].AbilityMod}}</span>
       <i class="fa fa-plus between-scores"></i>
     </div>
     <div class="ability-mod col-md-3">
-      <span class="score">{{this.skills[skill].Ranks}}</span>
+      <span class="score">{{this.filteredSkills[skill].Ranks}}</span>
       <i class="fa fa-plus between-scores"></i>
     </div>
     <div class="misc-mod col-md-3">
-      <input class="score" value="{{this.skills[skill].MiscMod}}" />
+      <input class="score" value="{{this.filteredSkills[skill].MiscMod}}" />
     </div>
   </div>
 </div>

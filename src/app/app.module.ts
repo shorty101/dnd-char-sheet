@@ -36,7 +36,7 @@ import { CharacterArmourClassComponent } from './components/character-armour-cla
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
