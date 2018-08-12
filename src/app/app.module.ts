@@ -7,7 +7,7 @@ import { CharacterSheetComponent } from './components/character-sheet/character-
 import { CharacterHeaderDetailsComponent } from './components/character-header-details/character-header-details.component';
 import { CharacterAttributeDetailsComponent } from './components/character-attribute-details/character-attribute-details.component';
 import { CharacterAttackDetailsComponent } from './components/character-attack-details/character-attack-details.component';
-import { CharacterSpeedInitGrappleDetailsComponent } from './components/character-speed-init-grapple-details/character-speed-init-grapple-details.component';
+import { CharacterCombatStatisticsComponent } from './components/character-combat-statistics/character-combat-statistics.component';
 import { CharacterSaveDetailsComponent } from './components/character-save-details/character-save-details.component';
 import { CharacterSkillDetailsComponent } from './components/character-skill-details/character-skill-details.component';
 import { CharacterHitPointDetailsComponent } from './components/character-hit-point-details/character-hit-point-details.component';
@@ -15,6 +15,7 @@ import { CharacterRacialTraitDetailsComponent } from './components/character-rac
 import { CharacterFeatDetailsComponent } from './components/character-feat-details/character-feat-details.component';
 import { CharacterLanguageDetailsComponent } from './components/character-language-details/character-language-details.component';
 import { CharacterClassFeatureDetailsComponent } from './components/character-class-feature-details/character-class-feature-details.component';
+import { CharacterArmourClassComponent } from './components/character-armour-class/character-armour-class.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +24,15 @@ import { CharacterClassFeatureDetailsComponent } from './components/character-cl
     CharacterHeaderDetailsComponent,
     CharacterAttributeDetailsComponent,
     CharacterAttackDetailsComponent,
-    CharacterSpeedInitGrappleDetailsComponent,
+    CharacterCombatStatisticsComponent,
     CharacterSaveDetailsComponent,
     CharacterSkillDetailsComponent,
     CharacterHitPointDetailsComponent,
     CharacterRacialTraitDetailsComponent,
     CharacterFeatDetailsComponent,
     CharacterLanguageDetailsComponent,
-    CharacterClassFeatureDetailsComponent
+    CharacterClassFeatureDetailsComponent,
+    CharacterArmourClassComponent
   ],
   imports: [
     BrowserModule,

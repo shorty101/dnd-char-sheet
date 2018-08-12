@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CharSheetStatsService } from './../../services/char-sheet-stats.service';
+import { CharSheetStatsService } from '../../services/char-sheet-stats.service';
 
 @Component({
   selector: 'app-character-sheet',

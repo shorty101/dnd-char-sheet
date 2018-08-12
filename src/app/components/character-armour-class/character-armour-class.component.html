@@ -1,0 +1,61 @@
+<h5>Armour Class</h5>
+<div class="armour-class-block">
+  <span class="ac-title d-inline-flex col-md-1">AC</span>
+  <div class="d-inline-flex col-md-11">
+    <div class="total">
+      <span class="score">{{this.armourClass}}</span>
+      <span class="text-below">TOTAL</span>
+      <i class="fa fa-equals between-scores"></i>
+    </div>
+    <div class="flat">
+      <span class="score no-underline">10</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="armour">
+      <span class="score">{{this.armourBonus}}</span>
+      <span class="text-below">ARMOUR BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="shield">
+      <span class="score">{{this.shieldBonus}}</span>
+      <span class="text-below">SHIELD BONUS</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="dex">
+      <span class="score">{{this.stats.getCappedDexMod()}}</span>
+      <span class="text-below">DEX MODIFIER</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="size">
+      <span class="score">{{this.sizeBonus}}</span>
+      <span class="text-below">SIZE MODIFIER</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="natural">
+      <input class="score" value="{{this.naturalArmour}}" />
+      <span class="text-below">NATURAL ARMOUR</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="deflection">
+      <input class="score" value="{{this.deflectionMod}}" />
+      <span class="text-below">DEFLECTION MODIFIER</span>
+      <i class="fa fa-plus between-scores"></i>
+    </div>
+    <div class="misc">
+      <input class="score" />
+      <span class="text-below">MISC. BONUS</span>
+    </div>
+  </div>
+</div>
+<div class="touch-flat-footed-block">
+  <div class="col-md-5 d-inline-block row">
+    <span class="misc-title col-md-4">TOUCH AC</span>
+    <span  class="misc-text col-md-2">{{this.touchAC}}</span>
+  </div>
+  <div class="col-md-6 d-inline-block row">
+    <span class="misc-title col-md-5">FLAT-FOOTED AC</span>
+    <span class="misc-text col-md-2">{{this.flatFootedAC}}</span>
+  </div>
+</div>
+<div class="armour-shield-block">
+</div>

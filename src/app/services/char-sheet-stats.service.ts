@@ -513,7 +513,7 @@ export class CharSheetStatsService {
 
     this.classesUsed = {
       "Crusader": {
-        "Levels": 3,
+        "Levels": 1,
         "HitDice": 10,
         "BAB": "Full",
         "Fort": "Strong",

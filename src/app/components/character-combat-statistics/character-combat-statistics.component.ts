@@ -3,11 +3,11 @@ import { CharSheetStatsService } from '../../services/char-sheet-stats.service';
 
 
 @Component({
-  selector: 'app-character-speed-init-grapple-details',
-  templateUrl: './character-speed-init-grapple-details.component.html',
-  styleUrls: ['./character-speed-init-grapple-details.component.css']
+  selector: 'app-character-combat-statistics',
+  templateUrl: './character-combat-statistics.component.html',
+  styleUrls: ['./character-combat-statistics.component.css']
 })
-export class CharacterSpeedInitGrappleDetailsComponent implements OnInit {
+export class CharacterCombatStatisticsComponent implements OnInit {
   public initBonus: number;
   public speed: number;
   public grapple: number;
