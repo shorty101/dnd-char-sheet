@@ -18,6 +18,8 @@ export class CharSheetEquipmentService {
     }*/
   };
 
+  public weaponKeys = [];
+
   public armour = {
     "Name": "Unarmoured",
     "Armour Bonus": 0,
@@ -65,6 +67,7 @@ export class CharSheetEquipmentService {
         "Enhancement": 0,
         "Range Increment": "-",
         "Ammunition": null,
+        "Finessable": false,
         "Notes": ""
       },
       "Longbow": {
@@ -76,6 +79,7 @@ export class CharSheetEquipmentService {
         "Enhancement": 0,
         "Range Increment": "100ft",
         "Ammunition": 30,
+        "Finessable": false,
         "Notes": ""
       },
       "Unarmed Strike": {
@@ -87,9 +91,12 @@ export class CharSheetEquipmentService {
         "Enhancement": 0,
         "Range Increment": "-",
         "Ammunition": null,
+        "Finessable": true,
         "Notes": "Non-lethal, Provokes AoO"
       }
     };
+
+    this.weaponKeys = Object.keys(this.weapons);
 
     this.armour = {
       "Name": "Chain Shirt",
@@ -154,5 +161,9 @@ export class CharSheetEquipmentService {
 
   getDeflectionMod() {
     return this.deflectionModifier["Base"] + this.deflectionModifier["Enhancement"];
+  }
+
+  getWeaponDamage(weapon) {
+
   }
 }

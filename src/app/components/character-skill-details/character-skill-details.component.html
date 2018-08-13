@@ -4,7 +4,7 @@
     <input class="filter-input" placeholder="Skill filter" (input)="filterSkills(skillFilter)" #skillFilter />
   </div>
 </div>
-<div class="skill-table-header row">
+<div *ngIf="filteredSkillsKey.length > 0" class="skill-table-header row">
   <div class="col-md-5 text-left pl-4">
     <span class="skill-column-header d-block">Skill Name</span>
     <i class="fa fa-circle class-skill-header"></i>
@@ -17,6 +17,9 @@
     <span class="skill-column-header-skill-ranks col-md-3">Skill Ranks</span>
     <span class="skill-column-header-misc-mod col-md-3">Misc Mod</span>
   </div>
+</div>
+<div *ngIf="filteredSkillsKey.length == 0" class="col-md-12">
+  <span>You cannot make a skill check for the skill you're searching for because you are untrained.</span>
 </div>
 <div class="skill col-md-12" *ngFor="let skill of filteredSkillsKey">
   <div class="skill-name col-md-5">

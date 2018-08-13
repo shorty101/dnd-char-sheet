@@ -568,13 +568,6 @@ export class CharSheetStatsService {
       //Unlocked Level 9 "Dodge": "",
     }
 
-    this.armour["Armour Bonus"] = 5;
-    this.armour["Shield Bonus"] = 0;
-    this.armour.MaxDex = 2;
-    this.armour.MaxSpeed = 20;
-    this.armour.ArcaneSpellFailure = 0.3;
-    this.armour.ArmourCheckPenalty = -5;
-
     this.crusaderManeuversKnown = {
       "Crusader's Strike": {
         "Level": "Crusader 1",

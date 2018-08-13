@@ -1,122 +1,42 @@
 <h5>Attack Options</h5>
 <div class="combat-options">
-    <div class="weapon row odd first">
+    <div *ngFor="let weaponName of equipment.weaponKeys" class="weapon row odd first">
         <div class="weapon-name col-md-8">
-            <span class="underline-above">Greatsword</span>
+            <span class="underline-above">{{weaponName}}</span>
             <span class="text-below">WEAPON</span>
         </div>
         <div class="weapon-attack-bonus col-md-4">
-            <span class="underline-above">+4</span>
+            <span class="underline-above">{{calculateWeaponToHit(weaponName)}}</span>
             <span class="text-below">ATTACK BONUS</span>
         </div>
         <div class="weapon-damage col-md-3">
-            <span class="underline-above">2D6 + 4</span>
+            <span class="underline-above">{{calculateWeaponDamage(weaponName)}}</span>
             <span class="text-below">DAMAGE</span>
         </div>
         <div class="weapon-critical col-md-3">
-            <span class="underline-above">19-20/x2</span>
+            <span class="underline-above">{{equipment.weapons[weaponName]["Crit Range"]}}</span>
             <span class="text-below">CRITICAL</span>
         </div>
         <div class="weapon-type col-md-3">
-            <span class="underline-above">S</span>
+            <span class="underline-above">{{equipment.weapons[weaponName]["Type"]}}</span>
             <span class="text-below">TYPE</span>
         </div>
         <div class="weapon-range col-md-3">
-            <span class="underline-above">-</span>
+            <span class="underline-above">{{equipment.weapons[weaponName]["Range Increment"]}}</span>
             <span class="text-below">RANGE</span>
         </div>
         <div class="weapon-notes col-md-6">
-            <input class="input-above" />
+            <input class="input-above" value="{{getNotesAndAmmo(weaponName)}}" />
             <span class="text-below">NOTES/AMMUNITION</span>
         </div>
         <div class="weapon-attack col-md-4 offset-md-1">
-            <button class="btn btn-outline-dark attack-button" (click)="open(attack1)">ATTACK</button>
-        </div>
-    </div>
-    <div class="weapon row even">
-        <div class="weapon-name col-md-8">
-            <span class="underline-above">Longbow</span>
-            <span class="text-below">WEAPON</span>
-        </div>
-        <div class="weapon-attack-bonus col-md-4">
-            <span class="underline-above">+2</span>
-            <span class="text-below">ATTACK BONUS</span>
-        </div>
-        <div class="weapon-damage col-md-3">
-            <span class="underline-above">1D8</span>
-            <span class="text-below">DAMAGE</span>
-        </div>
-        <div class="weapon-critical col-md-3">
-            <span class="underline-above">x3</span>
-            <span class="text-below">CRITICAL</span>
-        </div>
-        <div class="weapon-type col-md-3">
-            <span class="underline-above">P</span>
-            <span class="text-below">TYPE</span>
-        </div>
-        <div class="weapon-range col-md-3">
-            <span class="underline-above">100ft</span>
-            <span class="text-below">RANGE</span>
-        </div>
-        <div class="weapon-notes col-md-6">
-            <input class="input-above" value="30 Arrows" />
-            <span class="text-below">NOTES/AMMUNITION</span>
-        </div>
-        <div class="weapon-attack col-md-4 offset-md-1">
-                <button class="btn btn-outline-dark attack-button" (click)="open(attack2)">ATTACK</button>
-        </div>
-    </div>
-    <div class="weapon row odd last">
-        <div class="weapon-name col-md-8">
-            <span class="underline-above">Unarmed Strike</span>
-            <span class="text-below">WEAPON</span>
-        </div>
-        <div class="weapon-attack-bonus col-md-4">
-            <span class="underline-above">+4</span>
-            <span class="text-below">ATTACK BONUS</span>
-        </div>
-        <div class="weapon-damage col-md-3">
-            <span class="underline-above">1D4 + 3</span>
-            <span class="text-below">DAMAGE</span>
-        </div>
-        <div class="weapon-critical col-md-3">
-            <span class="underline-above">x2</span>
-            <span class="text-below">CRITICAL</span>
-        </div>
-        <div class="weapon-type col-md-3">
-            <span class="underline-above">B</span>
-            <span class="text-below">TYPE</span>
-        </div>
-        <div class="weapon-range col-md-3">
-            <span class="underline-above">-</span>
-            <span class="text-below">RANGE</span>
-        </div>
-        <div class="weapon-notes col-md-6">
-            <input class="input-above" value="Non-lethal" />
-            <span class="text-below">NOTES/AMMUNITION</span>
-        </div>
-        <div class="weapon-attack col-md-4 offset-md-1">
-            <button class="btn btn-outline-dark attack-button">ATTACK</button>
+            <button class="btn btn-outline-dark attack-button" (click)="open(attack, weaponName)">ATTACK</button>
         </div>
     </div>
 </div>
-<ng-template #attack1 let-c="close" let-d="dismiss">
+<ng-template #attack let-c="close" let-d="dismiss">
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-attack-1">Greatsword Attack</h4>
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <p>This is the modal body</p>
-    </div>
-    <div class="modal-footer">
-        <p>This is the modal footer</p>
-    </div>
-</ng-template>
-<ng-template #attack2 let-c="close" let-d="dismiss">
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-attack-2">Longbow Attack</h4>
+        <h4 class="modal-title" id="modal-attack-1">{{selectedWeapon}} Attack</h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
